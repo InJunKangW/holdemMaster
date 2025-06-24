@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 import com.example.holdemmaster.card.Card;
+import com.example.holdemmaster.combination.HoldemCombination;
 
 public class StraightChecker implements CombinationChecker {
 	@Override
@@ -32,5 +33,10 @@ public class StraightChecker implements CombinationChecker {
 			if (straight) return true;
 		}
 		return false;
+	}
+
+	@Override
+	public HoldemCombination getCombination() {
+		return HoldemCombination.STRAIGHT;
 	}
 }

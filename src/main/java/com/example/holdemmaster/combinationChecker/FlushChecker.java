@@ -3,6 +3,7 @@ package com.example.holdemmaster.combinationChecker;
 import java.util.List;
 
 import com.example.holdemmaster.card.Card;
+import com.example.holdemmaster.combination.HoldemCombination;
 
 public class FlushChecker implements CombinationChecker {
 	@Override
@@ -12,5 +13,10 @@ public class FlushChecker implements CombinationChecker {
 			if (card.getSuit() != suit) return false;
 		}
 		return true;
+	}
+
+	@Override
+	public HoldemCombination getCombination() {
+		return HoldemCombination.FLUSH;
 	}
 }
