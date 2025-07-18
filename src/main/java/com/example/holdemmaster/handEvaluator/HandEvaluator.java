@@ -1,22 +1,31 @@
 package com.example.holdemmaster.handEvaluator;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
+import java.util.Comparator;
 import java.util.List;
-import java.util.Set;
+
+import org.springframework.stereotype.Component;
 
 import com.example.holdemmaster.card.Card;
 import com.example.holdemmaster.combination.HoldemCombination;
 import com.example.holdemmaster.combinationChecker.CombinationChecker;
 
-import lombok.RequiredArgsConstructor;
-
-@RequiredArgsConstructor
+@Component
 public class HandEvaluator {
 	List<CombinationChecker> combinationCheckers;
 
-	public HoldemCombination getCombination(List<Card> cards) {
+	public HandEvaluator(List<CombinationChecker> combinationCheckers) {
+		this.combinationCheckers = combinationCheckers.stream()
+			.sorted(Comparator.comparingInt(
+				c -> -c.getCombination().getRank()))
+			.toList();
+	}
 
+	public HoldemCombination getCombination(List<Card> cards) {
+		for (CombinationChecker checker : combinationCheckers) {
+			if (checker.matches(cards)) {
+				return checker.getCombination();
+			}
+		}
+		return HoldemCombination.TOP;
 	}
 }
