@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.example.holdemmaster.card.Card;
 import com.example.holdemmaster.combination.HoldemCombination;
 
+@Component
 public class StraightChecker implements CombinationChecker {
 	@Override
 	public boolean matches(List<Card> cards) {

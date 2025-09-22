@@ -2,11 +2,14 @@ package com.example.holdemmaster.combinationChecker;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.example.holdemmaster.card.Card;
 import com.example.holdemmaster.combination.HoldemCombination;
 
 import lombok.RequiredArgsConstructor;
 
+@Component
 @RequiredArgsConstructor
 public class StraightFlushChecker implements CombinationChecker {
 	private final FlushChecker flushChecker;

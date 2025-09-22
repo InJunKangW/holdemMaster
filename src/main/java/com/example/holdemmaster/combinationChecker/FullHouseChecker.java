@@ -4,9 +4,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.springframework.stereotype.Component;
+
 import com.example.holdemmaster.card.Card;
 import com.example.holdemmaster.combination.HoldemCombination;
 
+@Component
 public class FullHouseChecker implements CombinationChecker {
 
 	@Override
