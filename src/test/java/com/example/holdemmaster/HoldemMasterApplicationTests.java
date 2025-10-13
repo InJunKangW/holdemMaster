@@ -2,6 +2,8 @@ package com.example.holdemmaster;
 
 import static org.assertj.core.api.Assertions.*;
 import java.util.List;
+
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -44,6 +46,7 @@ class HoldemMasterApplicationTests {
 	}
 
 	@Test
+	@DisplayName("포카드와 로얄 스트레이트 플러시가 동시에 있을 때의 족보 판단 테스트")
 	void testFourCard2() {
 		List<Card> cards = List.of(
 			new Card(Card.Suit.SPADES, 10),
