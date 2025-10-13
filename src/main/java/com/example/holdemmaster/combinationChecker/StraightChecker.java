@@ -8,11 +8,12 @@ import org.springframework.stereotype.Component;
 
 import com.example.holdemmaster.domain.Card;
 import com.example.holdemmaster.combination.HoldemCombination;
+import com.example.holdemmaster.domain.HoldemHand;
 
 @Component
 public class StraightChecker implements CombinationChecker {
 	@Override
-	public boolean matches(List<Card> cards) {
+	public boolean matches(HoldemHand holdemHand, List<Card> cards) {
 		List<Integer> ranks = new ArrayList<>();
 		for (Card card : cards) {
 			ranks.add(card.getRank());

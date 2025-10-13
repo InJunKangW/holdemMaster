@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import com.example.holdemmaster.domain.Card;
 import com.example.holdemmaster.combination.HoldemCombination;
+import com.example.holdemmaster.domain.HoldemHand;
 
 import lombok.RequiredArgsConstructor;
 
@@ -16,8 +17,8 @@ public class StraightFlushChecker implements CombinationChecker {
 	private final StraightChecker straightChecker;
 
 	@Override
-	public boolean matches(List<Card> cards) {
-		return flushChecker.matches(cards) && straightChecker.matches(cards);
+	public boolean matches(HoldemHand holdemHand, List<Card> cards) {
+		return flushChecker.matches(holdemHand, cards) && straightChecker.matches(holdemHand, cards);
 	}
 
 	@Override

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import com.example.holdemmaster.domain.Card;
 import com.example.holdemmaster.combination.HoldemCombination;
 import com.example.holdemmaster.combinationChecker.CombinationChecker;
+import com.example.holdemmaster.domain.HoldemHand;
 
 @Component
 public class HandEvaluator {
@@ -20,9 +21,9 @@ public class HandEvaluator {
 			.toList();
 	}
 
-	public HoldemCombination getCombination(List<Card> cards) {
+	public HoldemCombination getCombination(HoldemHand holdemHand, List<Card> cards) {
 		for (CombinationChecker checker : combinationCheckers) {
-			if (checker.matches(cards)) {
+			if (checker.matches(holdemHand, cards)) {
 				return checker.getCombination();
 			}
 		}

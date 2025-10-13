@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import com.example.holdemmaster.domain.Card;
+import com.example.holdemmaster.domain.HoldemHand;
 
 public abstract class NOfAKindChecker implements  CombinationChecker{
 
@@ -15,7 +16,7 @@ public abstract class NOfAKindChecker implements  CombinationChecker{
 	}
 
 	@Override
-	public boolean matches(List<Card> cards) {
+	public boolean matches(HoldemHand holdemHand, List<Card> cards) {
 		Map<Integer, Long> rankCounts = cards.stream()
 			.collect(Collectors.groupingBy(Card::getRank, Collectors.counting()));
 
