@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import com.example.holdemmaster.card.Card;
+import com.example.holdemmaster.domain.Card;
 
 public abstract class NOfAKindChecker implements  CombinationChecker{
 

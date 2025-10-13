@@ -7,7 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import com.example.holdemmaster.card.Card;
+import com.example.holdemmaster.domain.Card;
 import com.example.holdemmaster.combination.HoldemCombination;
 import com.example.holdemmaster.handEvaluator.HandEvaluator;
 

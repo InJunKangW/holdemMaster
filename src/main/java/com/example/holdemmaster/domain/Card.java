@@ -1,4 +1,4 @@
-package com.example.holdemmaster.card;
+package com.example.holdemmaster.domain;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;

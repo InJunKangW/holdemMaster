@@ -2,7 +2,7 @@ package com.example.holdemmaster.combinationChecker;
 
 import java.util.List;
 
-import com.example.holdemmaster.card.Card;
+import com.example.holdemmaster.domain.Card;
 import com.example.holdemmaster.combination.HoldemCombination;
 
 public interface CombinationChecker {
