@@ -42,4 +42,21 @@ class HoldemMasterApplicationTests {
 		HoldemCombination result = handEvaluator.getCombination(cards);
 		assertThat(result).isEqualTo(HoldemCombination.FOUR_CARD);
 	}
+
+	@Test
+	void testFourCard2() {
+		List<Card> cards = List.of(
+			new Card(Card.Suit.SPADES, 10),
+			new Card(Card.Suit.DIAMONDS, 10),
+			new Card(Card.Suit.CLUBS, 10),
+			new Card(Card.Suit.HEARTS, 10),
+			new Card(Card.Suit.HEARTS, 11),
+			new Card(Card.Suit.HEARTS, 12),
+			new Card(Card.Suit.HEARTS, 13),
+			new Card(Card.Suit.HEARTS, 14)
+		);
+
+		HoldemCombination result = handEvaluator.getCombination(cards);
+		assertThat(result).isEqualTo(HoldemCombination.STRAIGHT_FLUSH);
+	}
 }
